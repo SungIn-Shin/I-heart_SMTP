@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<properties resource="com/iheart/email/config/dbprops.properties"/>
+	
+	<settings>
+		<setting name="mapUnderscoreToCamelCase" value="true" />
+	</settings>
+
+	<typeAliases>
+	</typeAliases>
+
+	<environments default="development">
+		<!-- MariaDB DataSource -->
+		<environment id="MARIADB">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${MARIADB.DRIVER}" />
+				<property name="url" value="${MARIADB.URL}" />
+				<property name="username" value="${MARIADB.USERNAME}" />
+				<property name="password" value="${MARIADB.PASSWORD}" />
+			</dataSource>
+		</environment>
+		
+		<!-- MSSQL DataSource -->
+		<environment id="MSSQL">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${MSSQL.DRIVER}" />
+				<property name="url" value="${MSSQL.URL}" />
+				<property name="username" value="${MSSQL.USERNAME}" />
+				<property name="password" value="${MSSQL.PASSWORD}" />
+			</dataSource>
+		</environment>
+		
+		<!-- MYSQL DataSource -->
+		<environment id="MYSQL">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${MYSQL.DRIVER}" />
+				<property name="url" value="${MYSQL.URL}" />
+				<property name="username" value="${MYSQL.USERNAME}" />
+				<property name="password" value="${MYSQL.PASSWORD}" />
+			</dataSource>
+		</environment>
+		
+		<!-- ORACLE DataSource -->
+		<environment id="ORACLE">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${ORACLE.DRIVER}" />
+				<property name="url" value="${ORACLE.URL}" />
+				<property name="username" value="${ORACLE.USERNAME}" />
+				<property name="password" value="${ORACLE.PASSWORD}" />
+			</dataSource>
+		</environment>
+		
+	</environments>
+	
+	
+
+	<mappers>
+	</mappers>
+</configuration>
