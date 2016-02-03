@@ -18,7 +18,6 @@ public abstract class AbstractDAOFactory {
 		
 		switch(whichFactory.toUpperCase()){
 		case ORACLE : 
-			System.out.println("오라클 호출");
 			return new OracleDAOFactory();
 		case MYSQL :
 			return new MySqlDAOFactory();

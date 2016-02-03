@@ -39,8 +39,8 @@ public class SendMailTest {
 
 		Properties p = new Properties();
 		p.put("mail.smtp.user", "tlstjddls123@gmail.com");
-		p.put("mail.smtp.host", "smtp.gmail.com");
-		p.put("mail.smtp.port", "465");
+		p.put("mail.smtp.host", "192.168.100.29");
+		p.put("mail.smtp.port", "25000");
 		p.put("mail.smtp.starttls.enable", "true");
 		p.put("mail.smtp.auth", "true");
 		p.put("mail.smtp.debug", "true");

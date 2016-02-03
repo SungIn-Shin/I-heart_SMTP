@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
+import org.ssi.mime.parser.MimeParser;
 import org.subethamail.smtp.MessageContext;
 import org.subethamail.smtp.MessageHandler;
 import org.subethamail.smtp.MessageHandlerFactory;
@@ -14,7 +15,6 @@ public class MyMessageHandlerFactory implements MessageHandlerFactory {
 
 	@Override
 	public MessageHandler create(MessageContext ctx) {
-		System.out.println("zzzzzz->"+ ctx.getSMTPServer().getPort());
 		return new Handler(ctx);
 	}
 
@@ -34,10 +34,12 @@ public class MyMessageHandlerFactory implements MessageHandlerFactory {
 		}
 
 		public void data(InputStream data) throws IOException {
-			System.out.println("MAIL DATA");
-			System.out.println("= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =");
-			System.out.println(this.convertStreamToString(data));
-			System.out.println("= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =");
+//			System.out.println("MAIL DATA");
+//			System.out.println("= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =");
+//			System.out.println(this.convertStreamToString(data));
+//			System.out.println("= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =");
+			MimeParser parser = new MimeParser(data);
+			parser.parse();
 		}
 
 		public void done() {
@@ -57,9 +59,8 @@ public class MyMessageHandlerFactory implements MessageHandlerFactory {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+
 			return sb.toString();
 		}
-
 	}
-
 }

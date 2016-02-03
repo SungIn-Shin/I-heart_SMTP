@@ -1,47 +1,20 @@
-package com.iheart.ssi.smtp.commons.outlook;
+package com.iheart.ssi.dummy.agent;
 
-import org.apache.commons.mail.DefaultAuthenticator;
 import org.apache.commons.mail.EmailAttachment;
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.MultiPartEmail;
 
-public class ApacheCommonsEmail_Outlook {
+public class DummyAgentMain {
 	public static void main(String[] args) {
 		try {
-			// Email email = new HtmlEmail();
-			// email.setHostName("HERA.i-heart.co.kr");
-			// email.setSmtpPort(587);
-			// email.setAuthenticator(new
-			// DefaultAuthenticator("sishin@i-heart.co.kr", "tjddlsdpdltm6*"));
-			// email.setFrom("sishin@i-heart.co.kr");
-			// email.setSubject("TestMail");
-			// email.setMsg("This is a test mail ... :-)");
-			// email.addTo("tlstjddls123@naver.com");
-			// email.setDebug(true);
-			// email.send();
-
-			// Create the attachment
-			// 첨부파일 전송.. EmailAttachment 객체 1개당 첨부파일 1개.
-//			EmailAttachment attachment = new EmailAttachment();
-//			attachment.setPath("D:/currentLog.log");
-//			attachment.setDisposition(EmailAttachment.ATTACHMENT);
-//			attachment.setDescription("Picture of John");
-//			attachment.setName("John");
-//
-//			EmailAttachment attachment2 = new EmailAttachment();
-//			attachment2.setPath("D:/log.conf");
-//			attachment2.setDisposition(EmailAttachment.ATTACHMENT);
-//			attachment2.setDescription("logFile");
-//			attachment2.setName("LOG");
 			long start = System.currentTimeMillis();
 			String[] attArgs = { "D:/log.conf", "D:/currentLog.log" };
 			
 			// // Create the email message
 			MultiPartEmail email = new MultiPartEmail();
-			email.setHostName("smtp.googlemail.com");
-			email.setSmtpPort(465);
-			email.setAuthenticator(new DefaultAuthenticator("tlstjddls123", "ajcylryaumqwvsze"));
-			email.setSSLOnConnect(true);
+			email.setHostName("192.168.100.29");
+			email.setSmtpPort(25000);
+			email.setAuthenticator(null);
 //			email.addTo("tlstjddls123@naver.com", "John Doe");
 			email.addTo("tlstj@naver.com", "John Doe");
 //			email.addTo("apple_hip@naver.com", "John Doe");
@@ -55,7 +28,7 @@ public class ApacheCommonsEmail_Outlook {
 			email.setBounceAddress("tlstjddls123@naver.com"); //반송메일 주소 지정. 설정하지 않으면 기본 setFrom값으로 반송됨.
 			email.setCharset("UTF-8"); // CharSet지정, 메세지 내용을 지정하기 전에 설정해야합니다.
 			email.setFrom("tlstjddls123@gmail.com", "Me");
-			email.setSubject("The picture");
+			email.setSubject("제목입니다.");
 			email.setMsg("Here is the picture you wanted");
 			email.setDebug(true);
 			
@@ -69,10 +42,12 @@ public class ApacheCommonsEmail_Outlook {
 			long end = System.currentTimeMillis();
 			System.out.println((end - start) + "밀리세컨");
 		} catch (EmailException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 	}
-
+	
 	public static void setAttachments(String[] args, MultiPartEmail email) throws EmailException {
 		//
 		int attSize = args.length;

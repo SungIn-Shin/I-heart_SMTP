@@ -24,7 +24,7 @@ public class ApacheCommonsEmail_ImageAtt {
 			email.setMsg("This is a test mail ... :-)"); // 여기서는 이놈이 안보일거임.
 			email.addTo("tlstjddls123@naver.com");
 			email.setDebug(true);
-			
+
 			// HTML Message 세팅
 			email.setHtmlMsg(htmlEmailTemplate);
 			// Client가 HTML Message를 지원하지 않으면 TextMsg를 띄워준다.
@@ -34,7 +34,6 @@ public class ApacheCommonsEmail_ImageAtt {
 		} catch (EmailException e) {
 			e.printStackTrace();
 		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
