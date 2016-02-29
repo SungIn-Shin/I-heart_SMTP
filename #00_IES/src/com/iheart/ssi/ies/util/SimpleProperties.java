@@ -53,7 +53,7 @@ public class SimpleProperties extends Properties {
 	public static synchronized SimpleProperties getInstance() {
 		//
 		if (instance == null) {
-			System.out.println("Class Path 에서 값을 찾습니다.");
+			System.out.println("Properties Instance를 찾을 수 없습니다.");
 		} else {
 			return instance;
 		}

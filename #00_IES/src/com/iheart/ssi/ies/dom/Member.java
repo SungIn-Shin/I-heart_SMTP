@@ -9,29 +9,29 @@ public class Member implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private String memberName;
+	private String memberId;
 	private String memberPwd;
-
-	public Member(String memberName, String memberPwd) {
+	
+	
+	
+	public Member(String memberId, String memberPwd) {
 		super();
-		this.memberName = memberName;
+		this.memberId = memberId;
 		this.memberPwd = memberPwd;
 	}
-
-	public String getMemberName() {
-		return memberName;
+	public String getMemberId() {
+		return memberId;
 	}
-
-	public void setMemberName(String memberName) {
-		this.memberName = memberName;
+	public void setMemberId(String memberId) {
+		this.memberId = memberId;
 	}
-
 	public String getMemberPwd() {
 		return memberPwd;
 	}
-
 	public void setMemberPwd(String memberPwd) {
 		this.memberPwd = memberPwd;
 	}
+
+	
 
 }

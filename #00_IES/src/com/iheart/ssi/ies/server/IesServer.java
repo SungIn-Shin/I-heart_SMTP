@@ -24,12 +24,7 @@ public class IesServer {
 		LoginAuthenticationHandlerFactory authFactory = new LoginAuthenticationHandlerFactory(validator);
 		
 		SMTPServer smtpServer = new SMTPServer(iesFactory, authFactory);
-
-		smtpServer.setPort(25000);
-		/**
-		 * 사용자 인증 Factory
-		 */
-		
+		smtpServer.setPort(25001);
 		smtpServer.start();
 	}
 }

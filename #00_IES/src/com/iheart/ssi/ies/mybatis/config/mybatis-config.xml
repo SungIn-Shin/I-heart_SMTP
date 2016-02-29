@@ -7,6 +7,7 @@
 		http://www.mybatis.org/mybatis-3/ko/configuration.html#settings
 	 -->
 	<settings>
+		<!-- a_bcd(DB) -> aBcd(DTO, VO 형식) CamelCase로 자동 변경 -->
 		<setting name="mapUnderscoreToCamelCase" value="true" />
 	</settings>
 	
